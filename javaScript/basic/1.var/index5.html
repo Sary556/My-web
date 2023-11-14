@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var, let, const키워드들로 선언된 변수들의 특징 및 차이점 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        // [1] let
+        // 변수를 만들때 변수명 앞에 적는 키워드중 하나
+        // 스코프(scope) : 범위 (프로그램에서의 범위를 의미)
+        // let, const--> 블록 레벨 스코프 -- > {}중괄로 안에서만 작동하는듯?
+        // var --> 함수 레벨 스코프 --> 
+
+        // [2] var
+        // 함수내에서 선언된 변수는 함수내에서만 유효이다 --> 함수 밖에서는 참조할수 없다(사용할수없다)
+        // 함수내에서 선언된 변수 --> 지역변수
+        // 함수 외부에서 선언된 변수 --> 전역변수
+        // 함수 --> function(){}
+
+        // [3] : 블록 레벨 스코프// let, const 
+        //function(){},if(){},for(){},while(){}문 등에서 선언된 변수는 블록내에서만 유효하다 --> 블록 밖에서는 참조할수 없다.
+        //코드 블록 내에서 선언된 변수-->지역변수
+
+        //수업 
+
+
+
+        console.log(name);//홍길동 
+        //name은 호이스팅이 되었기 때문에 {}밖에서 선언을해도 실행이된다. 
+        //호이스팅이 되는것 var와 이름이 있는변수(클래스 네임이 있는함수라고 생각해야할듯? ex)function 이름() )
+        // 호이스팅이란 메모리상에서 어디서든 참조할수있게 위쪽(상위 메모리?)에 올려놓는것..
+        //최근 var함수를 잘사용하지않는 이유가 어디서든 실행이되버려서 안?됨
+        if(true){//if구문 if문의 영역(스코프)
+            var name="홍길동";
+        }         // var가 아닌 let 키워드를 사용하여 변수를 만들면 의도치 않게 전역변수가 되어 실행되는 것을 막을수있다.
+        console.log(name);//name 전역변수,
+
+        if(true){
+            let name1="홍길동";
+        } 
+        // console.log(name1);//undefind
+        /* stack이란 lifo 방식으로 운영되는 컬렉션 객체 */
+
+        //[4] 변수선언및 값 셋팅(할당)
+
+        let user;//user라는 이름을 가진 변수를 생성한다 -> 선언 -> 선언만했을뿐 undefind : 빨간줄이 안뜨는걸보니 오류는안뜨지만 아직값이 세팅한것은 아니다라고 뜸
+        console.log(user)//undefind
+
+        user="강감찬";
+        console.log(user)//undefind//강감찬 
+
+        let phoneNumber="01012345678" /* phoneNumber->선언 ="01012345678" 할당 */
+        /* 선언과 동시에 값 셋팅(할당) 셋팅을할당이라고 부르나봐 */
+        console.log(phoneNumber)
+
+        //
+        // let namename="이순신"
+        // let age=44; /* 숫자는 '' "" 넣으면안됨 */
+        // let email="test@naver.com";
+
+        let namename="이순신";
+            age=44; 
+            email="test@naver.com"; /* 위를 줄이면 아래처럼 적게된다 */
+        
+        console.log(email);
+        /* 주소값을 나타내는 변수는 "" '' 를 넣지않는다 */
+
+        // Var Function-scoped 재선언 가능 재할당도 가능
+        // let {Block-scoped} 재선언 불가능 재할당은 가능
+        // const {Block-scoped} 재선언 불가능 재할당은 가능
+
+        // water='a'
+        // water='b'
+        // 근데 그냥선언은 var도 let도 const도 아닌데 실행이안되는데 뭐야이건
+        // console.log(water)
+
+        //[5] const --> 불변
+        // 할당된 값을 변경되지 않도록 변수를 만들고자 한다면 const를 사용해야한다.
+        // 상수는 재할당할수 없다. -->변경한다면 에러가 발생
+        const name4="김순동";
+
+        // name4="김미자"; //에러
+        console.log(name4)
+
+        /* 
+        //생성과 동시에 할당해야한다.
+        const name5;
+        name="이순신"; */
+        const name5="이순신";
+
+        //상수 사용방법
+        //다른 개발자에게 상수라는 것을 알리는 용도로 const 키워드를 사용하여 변수를 생성.
+        //관습적으로 대문자로 표시를 많이 한다.
+        const PI=3.14;
+        const first_stage_bacground="#f20932";
+        const FIRST_STAGE_BACKGROUND="#CCC"
+        const LECTURE_RUNNING_TIME=30;
+    </script>
+</body>
+</html>

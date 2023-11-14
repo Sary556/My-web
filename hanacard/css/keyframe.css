@@ -1,0 +1,115 @@
+/* @charset "UTF-8"; */
+
+@keyframes gulum {
+    0%{
+        transform: translateX(-10px);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes dalryug {
+    0% {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes to_left {
+    0% {
+        transform: translateX(500px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes b_To_Bottom {
+    0% {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateY(30px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes car {
+    0% {
+        transform: translateX(500px);
+        opacity: 0;
+    }
+    85% {
+        transform: translateX(-180px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes umbrella {
+    0% {
+        transform: translate(110px,-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0px,0px);
+        opacity: 1;
+    }
+}
+
+@keyframes To_bottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate_circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+
+    }
+}
+
+@keyframes wind {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    10% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

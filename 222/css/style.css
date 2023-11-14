@@ -1,0 +1,332 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* reset */
+ul,
+ol,
+li {
+    list-style: none;
+    /* 블릿기호삭제 */
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    /* 밑줄삭제 */
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* layout */
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header {}
+
+#header h1 {
+    float: left;
+    width: 110px;
+    /* inline 요소안에는 block요소가 들어가지않음
+    block요소안에는 block요소,inline요소 모두 들어감 */
+    padding-top: 15px;
+}
+
+#header h1 a {}
+
+#header h1 a img {
+    width: 100%;
+}
+
+#header nav {
+    float: right;
+    background-color: #ddd;
+}
+
+#header nav ul {}
+
+#header nav ul li {
+    position: relative;
+    float: left;
+    width: 140px;
+    text-align: center;
+}
+
+#header nav ul li a {
+    display: block;
+    padding: 24px 20px 20px;
+    transition: 0.3s;
+}
+
+#header nav ul li a:hover {
+    background-color: #ccc;
+}
+
+#header .nav ul li .submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 66px;
+    z-index: 10;
+    /* 2엔 적용이안될수도있어서 그거보다 더높게 안전하게 10부터시작하는편이 적용이잘됨 */
+}
+
+#header .nav ul li .submenu li {}
+
+#header .nav ul li .submenu li a {
+    background-color: #888;
+    padding: 10px;
+    color: #fff;
+}
+
+#header .nav ul li .submenu li a:hover {
+    background-color: #666;
+}
+
+/* banner */
+#banner {
+    overflow: hidden;
+}
+
+#banner .slidelist {
+    width: 3000px;
+    position: relative;
+}
+
+#banner .slidelist .slideImg {
+    width: 1000px;
+    position: relative;
+    float: left;
+}
+
+#banner .slidelist .slideImg h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, .4);
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: #fff;
+
+}
+
+#banner .slidelist .slideImg img {
+    width: 100%;
+    /* img태그에 아래쪽 여백이 생기는 이유 > 인라인요소기때문
+    해결방법
+    1.display : block
+    2.vertical : align-top */
+    vertical-align:top;
+}
+
+/* content */
+#content1 {
+    margin-top: 20px;
+}
+
+#content1 .left {
+    float: left;
+    width: 49%;
+    margin-top: 20px;
+    /* background-color: #f2f2f2;
+    background-image: url(../img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position: right 20px center; */
+    background: #f2f2f2 url(../img/bg1.jpg) right 20px center/80px no-repeat;
+    /* background: bg-color bg-image position/bg-size bg-repeat */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#content1 .right {
+    float: right;
+    width: 49%;
+    background-color: #f2f2f2;
+    margin-top: 20px;
+    /* background-image: url(../img/bg2.jpg);
+    background-repeat: no-repeat; */
+    background: #f2f2f2 url(../img/bg1.jpg) right 20px center/80px no-repeat;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#content1 .title {
+    font-size: 22px;
+}
+
+#content1 .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+
+#content1 .left .btn {
+    background: url(../img/icon1.jpg)no-repeat left center;
+    background-size: 20px;
+    padding-left: 20px;
+    /* 글자를 밀려면 패딩으로민다 */
+}
+
+#content1 .right .btn em {
+    background: url(../img/icon2.jpg)no-repeat left center;
+    background-size: 20px;
+    padding-left: 20px;
+    /* 강조하기위한 태그들(인라인요소) */
+    /* 강조태그의 종류 = b태그 strong태그 em태그  */
+    /* 👀b와 strong은같아 보이지만 다른 태그다.
+    b 태그는 글자를 굵게만 만들지만 , strong 태그는 그 내용의 중요하다는 의미 또한 담고있다(컴퓨터상읽는게다른듯?)
+    🤷‍♀️i태그 em태그의 차이는
+    둘 다 글자를 기울이지만, i태그와 달리 em는
+    강조하는 역할을 한다.(컴퓨터상또 다르게읽나봄)
+    strong과 em태그는 강조한다는 컴퓨터상 적용이되어 청각으로 들을때 강조로 말해주는거같음
+    b와 i는 시각적으로는 같지만*/
+}
+
+#content2 {
+    margin-top: 30px;
+}
+
+#content2 .tab_menu {
+    height: 50px;
+}
+
+#content2 .tab_menu ul {}
+
+#content2 .tab_menu ul li {
+    float: left;
+    margin-right: 15px;
+    /* float으로 인해 부모의 영역이 깨짐현상 막기 
+    첫번째방법 : clear:both
+    2 : overflow:hidden(부모에게)
+    3 : 부모에게 높이감을 강제로 주기*/
+}
+
+#content2 .tab_menu ul li a {
+    font-size: 24px;
+    display: block;
+    padding-bottom: 10px;
+    color: #999;
+}
+
+#content2 .tab_menu ul li.active a {
+    color: black;
+    font-weight: bold;
+}
+
+#content2 .tab_cont {}
+
+#content2 .tab_cont>div {
+    overflow: hidden;
+}
+
+#content2 .tab_cont>div figure {
+    width: 32%;
+    margin-right: 2%;
+    float: left;
+}
+
+#content2 .tab_cont>div figure:last-child {
+    margin-right: 0;
+}
+
+#content2 .tab_cont>div figure img {
+    width: 100%;
+}
+
+#content2 .tab_cont>div figure figcaption {}
+
+
+/* footer */
+
+#footer {
+    margin-top: 30px;   
+    padding: 20px;
+    background-color: #202020;
+}
+
+#footer h2 {
+    float: left;
+    width: 150px;
+}
+
+#footer h2 img {}
+
+#footer .foot {
+    float: right;
+}
+/* #footer#footer .foot {} 최상위 요소를 두번 써서우선순위 최고등록 */
+/* #footer .foot.foot.foot {} 최상위의 하위요소를 우선순위 살짝부여 */
+/* https://iridescent-zeal.tistory.com/90 참고 */
+
+#footer .foot ul {
+    padding-bottom: 10px;
+}
+
+#footer .foot ul li {
+    display: inline;
+}
+
+#footer .foot ul li a {
+    color: #fff;
+}
+
+#footer .foot address {
+    color: #ccc;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* layer-bg */
+.layer-bg {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* width : 100% height : 100% 와 같다 */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.layer-bg .layer {
+    position: absolute;
+    left: calc(50% - 250px);
+    top: calc(50% - 250px);
+    background-color: #fff;
+    padding: 20px;
+    width: 500px;
+    height: 500px;
+    /* transform: translate(-50%,-50%); */
+}
+
+.layer-bg .layer h2 {}
+
+.layer-bg .layer .close {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}

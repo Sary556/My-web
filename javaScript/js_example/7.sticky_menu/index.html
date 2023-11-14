@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스티키메뉴</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>ScrollDown</h2>
+        <p>Scroll down to see the sticky effect.</p>
+    </header>
+    
+    <nav id="navbar">
+        <a href="javascript:void(0)" class="active">Home</a>
+        <a href="javascript:void(0)">News</a>
+        <a href="javascript:void(0)">Contact</a>
+    </nav>
+
+    <div class="content">
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, quae!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque blanditiis laboriosam excepturi perspiciatis quisquam quae deleniti dicta ipsam recusandae. Doloremque ut voluptate nostrum rem, obcaecati facere earum odit quasi adipisci inventore fugiat impedit, sapiente consectetur animi nobis corrupti est explicabo ad cum eligendi recusandae! Molestias natus cum sunt vero.</p>
+    </div>
+
+    <script>
+        //scroll이 발생하면 실행하는 function안에 단지 myfunction(); 와 같이 함수를 호출하는 내용 뿐이면 아래와 같이 단축할수있다.  
+        // window.addEventListener('scroll',function(){
+        //     myfunction()
+        // })
+
+        // window.addEventListener('scroll',myfunction)
+
+        // window.onscroll=function(){
+        //     myfunction()
+        // }
+
+        window.onscroll=myfunction;
+
+        
+        let navbar = document.getElementById('navbar')
+        //offset은 Document를 기준으로 하는 좌표를 구한다.
+        //position은 부모를 기준으로 좌표를 구한다.
+        let sticky=navbar.offsetTop;
+        console.log(sticky)
+        function myfunction(){
+            // console.log(window.scrollY) 밑과같다 어느것을 써도같은효과
+            console.log(window.pageYOffset)
+            if(window.pageYOffset>=sticky){
+            navbar.classList.add('sticky');
+        }else{
+            navbar.classList.remove('sticky');
+        }
+      }
+
+        
+    </script>
+</body>
+</html>

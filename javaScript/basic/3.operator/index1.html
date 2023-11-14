@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //연산자
+        //[1] 기본연산자
+        //자바스크립트에서 기본적으로 제공하는 수학 관련 연산자들-->+,-,*,/,%,**
+
+        //[2] :% --> 나누기(나머지를 구하는 나누기)
+        // console.log(`17 % 3 = ${17 % 3}`);//17 % 3 = 2
+        // console.log(`35 % 4 = ${35 % 4}`);//35 % 4 = 3
+
+        //[3] : /--> 그냥 나누기 {몫}(몫을 구하는 나머지)
+
+        // console.log(`7/2 = ${7/2}`);/* 7/2= 3.5 */
+
+        //[4] : ** --> 거듭제곱 연산자 --> a**b--> a를 b번 곱하기한 값 
+
+        console.log( 2 ** 2 );//4 2의2승
+        console.log( 2 ** 3 );//8 2의3승
+        console.log( 2 ** 4 );//16 2의 4승
+        console.log( `3 ** 3 = ${3 ** 3}`);//27 3의3승 곧 제곱이다
+
+        //[5]:더하기 연산자 --> +
+        console.log("안녕" + "하세요");//안녕하세요
+        console.log(`문자와 숫자 더하기--> "100" + 100 = ${"100"+100}` );/* ""선언으로 앞의 "100"은 문자처리되서 100과100이 합쳐져서 200이아닌 100100이돼었다 */
+
+        //숫자 + 숫자 + 문자
+        //피연산자중에서 하나가 문자열이면 나머지로 문자열로 바뀜. 피연사중에서 하나가 문자열이라면 문자열로 나온다네요
+        console.log(100 + 200 + "300");//300300 좌측부터 시작한다 숫자끼리는 덧셈+문자식으로 연결되었다 (100 + "200" + 300)이면 100200300으로 나옴..
+
+        //[6] : 더하기 이외의 연산자들은? --> -,*,/
+        // console.log(100 - "10");//10-->빼기 연산자는 피연산자중 하나가 문자열이면 계산을 하기위해서 숫자형으로 바꿔서 계산을 수행시킴
+        console.log("100" - 80)//20
+        console.log(100*"2")//200
+        console.log(300 / "3")//100
+
+        //[7]피연산자가 모두 문자열이라면?
+        console.log("100" + "100"); //100100 더하기는문자
+        console.log("100" - "100"); //0 빼기는 숫자
+        console.log("100" * "100"); //10000 곱하기는 숫자
+        console.log("100" / "100"); //1 나누기는 숫자
+        //[8]
+        let data = "100";
+        console.log(typeof data)//string "문자"
+
+        data = +data;
+        console.log(typeof data)//number "숫자"
+
+        let num = 100;
+        num = +num;
+        console.log(typeof num)//number //이미 숫자이므로 + 앞에 붙여도 변화가없음
+
+        //From태그안에 input를 사용해서 사용자로 부터입력바등ㄴ 값은 보통이 문자열이다
+        let score = "90";
+        console.log(`회원님의 점수는 : ${score + 5}입니다`)
+        console.log(`회원님의 점수는 : ${+score + 5}입니다`)
+        console.log(`회원님의 점수는 : ${Number(score) + 5}입니다.`)
+
+</script>
+</body>
+</html>

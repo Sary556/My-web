@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.border {
+    height: 100vh;
+    background-color: azure; 
+}
+
+.border .border_blob {
+    width: 480px;
+    height: 480px;
+    position: relative;
+    left: calc(50% - 240px);
+    top: calc(50% - 240px);
+    overflow: hidden;
+    /* 수평:h 수직:v 왼쪽l,오른쪽r,위쪽:t,아래쪽:b */
+    border-radius: 20px; /* tl,tr,br,bl */
+    border-radius: 10px 40px; /* tl br, tr bl */
+    border-radius: 10px 40px 80px; /* tl, tr br , bl */
+    border-radius: 16% 84% 22% 78% / 0% 100% 0% 100%;
+    /* border-radius: htl htr hbr hbl / vt1 vtr vbr vbl */
+    background-color:  black;
+    animation: gogo 6s infinite alternate;/
+}
+
+.border .border_blob img {
+    width: 100%;
+}
+
+
+.ro {
+    width: 480px;
+    height: 480px;
+    position: absolute;
+    left: calc(50% - 240px);
+    top: calc(50% - 240px);
+    animation: rotate 6s /* linear */ infinite alternate;
+}
+.ro .border_blob2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 480px;
+    height: 480px;
+    border: 5px groove #222;
+    animation: gogo 6s /* linear */ infinite alternate;/
+}
+.ro .bb2{
+    animation-delay: 2s;
+}
+
+@keyframes gogo {
+    0% {border-radius: 16% 84% 22% 78% / 0% 100% 0% 100% ;}
+    50% {border-radius: 0% 100% 0% 100% / 0% 100% 0% 100% ;}
+    100% {border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;}
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg);} /* degree각도 (degree=우리가 평소에 아는 몇도 몇도의 회전단위) */
+    100% {transform: rotate(360deg);} 
+}

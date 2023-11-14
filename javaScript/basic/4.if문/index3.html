@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if3</title>
+</head>
+
+<body>
+    <script>
+        //삼항 연산자--> 피연산자가 세개이기 때문에 삼항연산자로 불린다
+        //다른말로 하면 == 조건부 연산자
+
+        let 키 = 150;
+        if (키 >= 160) {
+            console.log("당신은 청룡열차를 탈수있는 키입니다")
+        } else {
+            console.log("당신은 청룡열차를 탈수없는 키입니다")
+        };
+
+        //let result=조건문?a:b;
+        //a는 조건문이 참일떄의 실행문
+        //b는 조건문이 거짓일때의 실행문
+
+        let result = (키 >= 160) ? console.log("당신은 청룡열차를 탈수있는 키입니다") :
+            console.log("당신은 청룡열차를 탈수없는 키입니다")
+
+        let 점수 = 66;
+
+        let 스마트폰 = (점수 >= 80) ? console.log("무슨 폰") : console.log("ㅅㄱ")
+
+        let 용돈 = 1000000;
+
+        let 노트북1 = 1100000;
+        let 노트북2 = 1000000;
+        let 노트북3 = 900000;
+
+
+        let 노트북 = (용돈>= 1100000) ? console.log(노트북1 + "노트북구입") :
+            (용돈 >= 1000000) ? console.log(노트북2 + "노트북구입") : console.log(노트북3 + "노트북구입")
+
+    </script>
+
+</body>
+
+</html>

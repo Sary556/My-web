@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../../webstandard"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "김연수"
+	}
+}

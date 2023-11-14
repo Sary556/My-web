@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <img src="img/bg.jpg" alt="bg" id="bg">
+        <img src="img/moon.png" alt="moon" id="moon">
+        <img src="img/mountain.png" alt="mountain" id="mountain">
+        <img src="img/road.png" alt="road" id="road">
+        <h2 class="text" id="text">Moon Night</h2>
+    </section>
+
+    <section class="content">
+        <h3>Parallax Background Scrolling</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officia dolorem alias vel obcaecati eaque,
+            fugit, doloremque corrupti accusantium quaerat facilis, maxime natus voluptatem expedita voluptatibus
+            blanditiis dignissimos officiis iusto cupiditate cumque nostrum iste vero? Quas corrupti magnam corporis!
+            Fugit minus perspiciatis atque! A, sunt maiores. Distinctio voluptate illum labore. Blanditiis maiores
+            placeat ratione adipisci nobis fuga perferendis. Cumque tempora illo mollitia perspiciatis id voluptatum et
+            ducimus? Labore nihil adipisci, exercitationem consequuntur odio sapiente ducimus distinctio cum placeat
+            ipsam impedit maiores quasi incidunt vel dolorem, saepe ea fugiat soluta! Voluptatem pariatur facilis
+            inventore quos est et, quam temporibus voluptate praesentium.</p>
+    </section>
+
+    <script>
+        // let bg = document.getElementById('bg'); (아래와같다)
+        let bg = document.getElementById('bg');
+        let moon = document.getElementById('moon');
+        let mountain = document.getElementById('mountain');
+        let road = document.getElementById('road');
+        let text = document.getElementById('text');
+
+
+        //scroll
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            console.log(value);
+
+            moon.style.left = -value * 0.2 + 'px';
+            moon.style.top = value * 0.35 + 'px';
+
+            bg.style.left = -value * 0.2 + 'px';
+            mountain.style.top = -value * 0.2 + 'px';
+            road.style.top = value * 0.15 + 'px';
+            text.style.top = value + 'px';
+        })
+    </script>
+</body>
+
+</html>
