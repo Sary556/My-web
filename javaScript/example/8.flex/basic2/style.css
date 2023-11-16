@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    border: 2px solid #000;
+    background-color: green;
+}
+
+.container .item {
+    border: 2px solid #000;
+    background-color: yellow;
+}
+
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    /* flex는 main축을 인식해야한다.(기본축의 기본은 row)
+justify- 는 main축을 기준으로 정렬
+align-는 main축과 cross되는 축의 정렬 */
+
+    /* 메인축에 대한 명령이 
+flex-direction:row  --기본값 
+--> 메인축의 방향을 결정한다 */
+
+/* justify-는 main축으로 정렬 */
+/* 오뎅꼬치 방향 */
+    justify-content: flex-start;
+    /* //기본값 */
+    justify-content: flex-end;
+    justify-content: center;
+    justify-content: space-between;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    
+
+
+
+
+/* align-는 main축가 cross되는 축의 정렬 */
+/* 오뎅을 뜯어먹는 방향 */
+    align-items: stretch;
+    /* //기본값 */
+    align-items: center;
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: baseline;
+}
+
+.container .item {
+    /* height: 100px; */
+    width: 200px;
+}

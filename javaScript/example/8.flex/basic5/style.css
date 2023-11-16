@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+
+    border: 2px solid #000;
+    background-color: green;
+
+}
+
+.container .item {
+    border: 2px solid #000;
+    background-color: yellow;
+
+}
+
+.container {
+    display: flex;
+}
+
+.item {
+    /* 줄어 들어라! 늘어나지 마라! */
+    flex-basis: auto;/* 기본값 = */
+    /* flex-basis: 100px; */
+    width: 100px;
+
+    flex-grow: 0;/* 기본값 */
+    /* flex-grow: 1; */
+}
+.item:nth-child(2) {
+    flex-grow: 1;
+    /* 부모가 쓰지않는공간을 차지 */
+}

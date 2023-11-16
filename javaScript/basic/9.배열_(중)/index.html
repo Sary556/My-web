@@ -22,16 +22,139 @@
         /* push : 배열 안 끝에 집어넣는다 배열안에 아무것도없으니 국>영>수 순으로 넣었다. */
         console.log(ar) //['국어','영어','수학']
 
-        const arr=[1,2,3,4,5,6]
-        console.log(arr)//
-        
-        //처음값과 끝값
-        const animals=[ 'tiger', 'alligator', 'elephant', 'dog', 'cat', 'sheep', 'hippo' ];
+        const arr = [1, 2, 3, 4, 5, 6]
+        console.log(arr) //
 
-        console.log(animals[0])//[0] 첫값 tiger
-        console.log(animals[4])//[4] 첫값 cat
-        console.log(animals.length)//7
-        console.log(animals[animals.length - 1])//맨끝값
+        //처음값과 끝값
+        const animals = ['tiger', 'alligator', 'elephant', 'dog', 'cat', 'sheep', 'hippo'];
+
+        console.log(animals[0]) //[0] 첫값 tiger
+        console.log(animals[4]) //[4] 첫값 cat
+        console.log(animals.length) //7
+        console.log(animals[animals.length - 1]) //맨끝값
+
+        //undefined 값을 가지는 경우
+
+        function 함수(i = 10) {
+            console.log("하나")
+            return "셋"
+        }
+        console.log(함수())
+
+        console.log(animals[5]); //sheep
+        console.log(animals[10]); //undefined
+
+        console.clear();
+
+        //배열의 반복과 출력
+        // 1. 전통적인 for 반복문
+        // 2. for .. in , for .. of 반복문
+        // 3. 배열명. forEach();
+        // 4. spread Operator(펼침 연산자)...
+
+
+        // 1. 전통적인 for 반복문
+        // const animals = ['tiger', 'alligator', 'elephant', 'dog', 'cat', 'sheep', 'hippo'];0~6
+        for (let i = 0; i < animals.length; i++ /* == i=i+1 , i+=1*/ ) {
+            console.log(animals[i])
+        }
+
+        console.clear()
+
+        // 2. for .. in , for .. of 반복문
+
+        // for(let 변수(배열안에 있는 아이템이 순서대로 호출됨) of 배열명){}
+        for (let item of animals)
+            console.log(item)
+        //위의 for문과 같은결과
+
+        // tiger
+        // index.html: 69 alligator
+        // index.html: 69 elephant
+        // index.html: 69 dog
+        // index.html: 69 cat
+        // index.html: 69 sheep
+        // index.html: 69 
+
+        for(let item in animals){
+            console.log(item)//0,1,2,3,4,5,6 -->index 
+            console.log(animals[item])
+        }
+        
+        
+        // 3. 배열명. forEach(function(){});
+        console.clear();
+        //첫번째 매개변수 --> 아이템 각각이 호출됨
+        //두번째 매개변수 --> 아이템 각각의 index가 호출
+        //세번재 매개변수 --> 원배열 animals
+        // animals.forEach(function(item,index,origin){
+        //     // console.log(item) 
+        //     // console.log(index)
+        //     // console.log(origin)
+            
+        // })
+
+        // animals.forEach(function(ele){
+        //     console.log(ele)//
+        // })
+
+
+        //Arrow function(=>)
+        // animals.forEach((ele)=>{
+        //     console.log(ele)
+        // })
+
+        // animals.forEach((ele)=>
+        //     console.log(ele)
+        // )
+
+        // animals.forEach((ele)=> console.log(ele))
+
+
+        animals.forEach(ele=> console.log(ele)) //매게변수가 하나일때만 생략할수있다.
+
+
+
+        // 4. spread Operator(펼침 연산자)...
+
+        console.clear();
+        console.log(...animals)//tiger alligator elephant dog cat sheep hippo
+
+        // 삽입과 삭제
+        //push() , pop() --> 맨뒤에 삽입하고 삭제
+        //unshift(),shift() --> 맨앞에 삽입하고 삭제 --> 쉬프트는 배열의 정렬에 사용 이거 두개는 잘안쓴다고함..컴퓨터상으론느리다네..
+
+        let testAr=[1,2,3,4,5,6]
+        testAr.push(7)
+        testAr.pop(7)
+        testAr.pop()//가장 마지막 아이템이 빠져나감
+        testAr.pop()
+        console.log(testAr)
+
+        testAr.unshift('a')
+        console.log(testAr)//(5) ['a', 1, 2, 3, 4]
+
+        testAr.shift()
+        console.log(testAr)//(4) [1, 2, 3, 4]
+        testAr.shift()
+        console.log(testAr)// (3) [2, 3, 4]
+
+
+        // 👕split()메서드
+        // 기능 --> 문자열을 배열로 리턴 --> 문자열에서 특정한 구분자를 기준으로 잘라내서 새로운 배열로 리턴
+        // 사용 --> 문자열.split(구분자,limit)
+        let somest="가랑잎이 솔잎더러 바스락거린다고 한다";
+        // let splitted=somest.split(" ");
+        // console.log(splitted)//(4) ['가랑잎이', '솔잎더러', '바스락거린다고', '한다']
+        // let splitted=somest.split(" ",2);
+        // console.log(splitted) //) ['가랑잎이', '솔잎더러']
+
+        let somest2="진도, 제주도, 거제도 ,독고 ,마라도";
+        let splitted2=somest2.split(', ',4)
+        console.log(splitted2)//(3) ['진도', '제주도', '거제도 ,독고 ,마라도']
+        
+
+        
     </script>
 
 </body>
