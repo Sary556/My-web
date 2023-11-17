@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+
+    border: 2px solid #000;
+    background-color: green;
+
+}
+
+.container .item {
+    border: 2px solid #000;
+    background-color: yellow;
+
+}
+
+.container {
+    display: flex;
+    
+}
+
+/* 줄어들어라 --> flex-shrink:1 
+   200px로 설정한 item에 적용하면 200px 밑에선 더이상 줄어들지않는다.. 반대.?
+늘어나지마라  --> flex-grow:0로 태어나는 속성 
+grow:1이면 계속 늘어난다.. 반대..?*/
+.item:nth-child(1) {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.item:nth-child(2) {
+    flex-grow: 1;
+}

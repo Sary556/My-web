@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="text">0</div>
+
+    <div class="fixed-bg" data-0="background-color:rgb(0,0,255);" data-500="background-color:rgb(255,0,0);">WOOOT</div>
+
+    <script src="js/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init();
+
+        let text=document.querySelector('.text');
+
+        window.addEventListener('scroll',function(){
+            let wScroll=window.pageYOffset;
+            console.log(wScroll)
+        })
+    </script>
+</body>
+</html>

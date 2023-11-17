@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+
+    border: 2px solid #000;
+    background-color: green;
+
+}
+
+.container .item {
+    border: 2px solid #000;
+    background-color: yellow;
+}
+
+.container {
+    display: flex;
+    /* flex-direction: row;/* 기본값 */
+    /* flex-wrap: wrap; */
+
+    flex-flow: row wrap; /*위를 줄인명령어 */
+    height: 100vh;
+    align-content: start;
+    
+}
+
+/* 줄어들어라 --> flex-shrink:1 
+늘어나지마라  --> flex-grow:0로 태어나는 기본 flex의 속성 
+*/
+.item {
+    /* flex: 1 1 0; */
+    /* flex-grow :1 
+    flex-shrink : 1 
+    flex-basis : 0 */
+    width: 30%;
+}
+.item:nth-child(1) {
+    /* width: 200px; */
+    /* flex-shrink: 0; */
+    width: 100%;
+    height: 150px;
+    align-content: stretch;
+}
+
+.item:nth-child(2) {
+    width: 200px;
+    flex-shrink: 0;
+    /* shrink - 200px 보다 줄어들지않는다. */
+    height: 500px;
+}
+.item:nth-child(3) {
+    flex-grow: 1;
+}
+.item:nth-child(4) {
+    width: 200px;
+    flex-shrink: 0;
+    height: 500px;
+}
+.item:nth-child(5) {
+    flex-grow: 1;
+    width: 100%;
+    height: 100px;
+}
+
+@media (max-width:600px) {
+    .item:nth-child(4) {
+        flex-grow: 1;
+        height: 300px;
+    }
+}

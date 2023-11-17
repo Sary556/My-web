@@ -76,12 +76,12 @@
         // index.html: 69 sheep
         // index.html: 69 
 
-        for(let item in animals){
-            console.log(item)//0,1,2,3,4,5,6 -->index 
+        for (let item in animals) {
+            console.log(item) //0,1,2,3,4,5,6 -->index 
             console.log(animals[item])
         }
-        
-        
+
+
         // 3. 배열명. forEach(function(){});
         console.clear();
         //첫번째 매개변수 --> 아이템 각각이 호출됨
@@ -91,7 +91,7 @@
         //     // console.log(item) 
         //     // console.log(index)
         //     // console.log(origin)
-            
+
         // })
 
         // animals.forEach(function(ele){
@@ -111,50 +111,163 @@
         // animals.forEach((ele)=> console.log(ele))
 
 
-        animals.forEach(ele=> console.log(ele)) //매게변수가 하나일때만 생략할수있다.
+        animals.forEach(ele => console.log(ele)) //매게변수가 하나일때만 생략할수있다.
 
 
 
         // 4. spread Operator(펼침 연산자)...
 
         console.clear();
-        console.log(...animals)//tiger alligator elephant dog cat sheep hippo
+        console.log(...animals) //tiger alligator elephant dog cat sheep hippo
 
         // 삽입과 삭제
         //push() , pop() --> 맨뒤에 삽입하고 삭제
         //unshift(),shift() --> 맨앞에 삽입하고 삭제 --> 쉬프트는 배열의 정렬에 사용 이거 두개는 잘안쓴다고함..컴퓨터상으론느리다네..
 
-        let testAr=[1,2,3,4,5,6]
+        let testAr = [1, 2, 3, 4, 5, 6]
         testAr.push(7)
         testAr.pop(7)
-        testAr.pop()//가장 마지막 아이템이 빠져나감
+        testAr.pop() //가장 마지막 아이템이 빠져나감
         testAr.pop()
         console.log(testAr)
 
         testAr.unshift('a')
-        console.log(testAr)//(5) ['a', 1, 2, 3, 4]
+        console.log(testAr) //(5) ['a', 1, 2, 3, 4]
 
         testAr.shift()
-        console.log(testAr)//(4) [1, 2, 3, 4]
+        console.log(testAr) //(4) [1, 2, 3, 4]
         testAr.shift()
-        console.log(testAr)// (3) [2, 3, 4]
+        console.log(testAr) // (3) [2, 3, 4]
 
 
         // 👕split()메서드
         // 기능 --> 문자열을 배열로 리턴 --> 문자열에서 특정한 구분자를 기준으로 잘라내서 새로운 배열로 리턴
         // 사용 --> 문자열.split(구분자,limit)
-        let somest="가랑잎이 솔잎더러 바스락거린다고 한다";
+        let somest = "가랑잎이 솔잎더러 바스락거린다고 한다";
         // let splitted=somest.split(" ");
         // console.log(splitted)//(4) ['가랑잎이', '솔잎더러', '바스락거린다고', '한다']
         // let splitted=somest.split(" ",2);
         // console.log(splitted) //) ['가랑잎이', '솔잎더러']
 
-        let somest2="진도, 제주도, 거제도 ,독고 ,마라도";
-        let splitted2=somest2.split(', ',4)
-        console.log(splitted2)//(3) ['진도', '제주도', '거제도 ,독고 ,마라도']
+        let somest2 = "진도, 제주도, 거제도 ,독고 ,마라도";
+        let splitted2 = somest2.split(', ', 4)
+        console.log(splitted2) //(3) ['진도', '제주도', '거제도 ,독고 ,마라도']
+
+        //slice() 메서드 --> 비교하며 splice()메서드 
+        //slice , splice --> 둘은 비슷하나 차이점이있다. 
+        // slice() --> 메서드는 원본 배열을 수정하지 않음. 즉, 복사해서 새로운 배열을 리턴
+
+        // splice() -->  원본 배열을 수정함 
+
+        //1)사용법
+        //slice(start)
+        //slice(start,end) 어디부터 어디까지 자를껀지..
+        //end는 지정한 end 전까지를 잘라낸다.
+        // console.clear();
+        // let sliceArr = ['tiger', 'alligator', 'elephant', 'dog', 'cat', 'sheep', 'hippo'];
+
+        // // 배열명.slice(1)//인덱스 1포함해서 그뒤로는 모두 잘라냄
+
+        // console.clear();
+
+        // let slideAr1 = sliceArr.slice(1)
+        // console.log(slideAr1) //tiger 컷
+        // console.log(sliceArr) //원본은 잘려나가지않았다. 원본 보존됐음
+
+        // let slideAr2 = sliceArr.slice(1, 4); //인덱스 1,2,3 여러개를 자를시 0,4,5,6빼고다잘랐네
+
+        // console.clear();
+
+        // console.log(slideAr2) //['alligator', 'elephant', 'dog'
+
+        console.clear()
+        const sliceNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        const sliceArNum1 = sliceNums.slice(5);
+        console.log(sliceArNum1);
+        console.log(sliceNums);
+
+
+
+
+        //splice() 메서드
+        //배열의 기존 요소를 삭제하거나 교체하고자 할때 --> 새로운 요소를 추가 --> 배열의 값을 변경
+        //원본을 수정, 잘라내고(삭제) 이어붙히기 기능
+        // console.clear();
+
+        //사용법
+        //splice(start,count(몇개를 잘라낼것인가))
+        //splice(start,count,값1,값2)//값1, 값2 -> 잘라낸 자리에 대체할 아이템
+
+
+
+        // 1))
+        // console.clear();
+        // const oriAr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // const spliceAr1=oriAr.splice(5)
+        // console.log(spliceAr1)
+        // console.log("원본배열 : " + oriAr)
+
+        //2)
+
+        // const splicAr2 = oriAr.splice(4, 3);
+        // console.log(splicAr2)
+        // console.log(oriAr)
+
+        //3)
+        // const spliceAr3 = oriAr.splice(3, 2, 'a', 'b', 'c');
+        // console.log(spliceAr3) /* [1, 2, 3, 'a', 'b', 'c', 6, 7, 8, 9, 10] */
+        // console.log(oriAr)
+
+        //4)
+        // const oriStrings = ['홍길도', '이순신', '강감찬', '김유신', '임꺽정'];
+
+        // const oristring1=oriStrings.splice(2,2,"세종대왕","을지문덕")
+        // console.log(oristring1)//['강감찬', '김유신']
+        // console.log(oriStrings)//['홍길도', '이순신', '세종대왕', '을지문덕', '임꺽정']
+
+        //마이너스
+        // const oristring2 = oriStrings.splice(-2); //뒤에서 2개
+        // console.log(oristring2) //  ['김유신', '임꺽정']
+        // console.log(oriStrings) // ['홍길도', '이순신', '강감찬']
+
+        //0 --> 새로운 요소 삽입, 삭제한 요소 없음 3,0,광개토대왕이면 3번자리에 0=삭제하지마라 바꾸지도말고 그냥 그자리에 '광개토대왕'을 삽입해라
+
+        // const oristring3=oriStrings.splice(3,0,'광개토대왕');
+        // console.log(oristring3) //[] ????????????????????
+        // console.log(oriStrings) //['홍길도', '이순신', '강감찬', '광개토대왕', '김유신', '임꺽정']
+
+        console.clear();
         
+        // 배열 붙이기 concat() 메서드
+
+        const myArr1=[1,2,3,4];
+        const myArr2=[5,6,7,8];
 
         
+        const myArr12=myArr1.concat(myArr2);
+
+        console.log(myArr1)/* [1,2,3,4]; */
+        console.log(myArr2)/* [5,6,7,8]; */
+        console.log(myArr12)/* [1, 2, 3, 4, 5, 6, 7, 8] */
+        
+        const myArr21=myArr2.concat(myArr1);
+        
+        console.log(myArr21)/* [5, 6, 7, 8, 1, 2, 3, 4] */
+
+        const str1="Hello"
+        const str2="JavaScript"
+        console.log(str1.concat(str2))
+        console.log(str1.concat(' ',str2))
+        console.log(str1.concat(', ',str2))
+        console.log(str2.concat(', ',str1))
+
+        const someList = ['안녕',' ','난',' ','뽀로로야~','!!']
+        console.log(...someList)// 안녕   난   뽀로로야~ !!
+        console.log(''.concat(...someList))// 안녕 난 뽀로로야~!!
+        //전개 연산자 (spread operator)--> 배열의 각 요소를 개별적인 인수로 전달한다.
+
     </script>
 
 </body>
